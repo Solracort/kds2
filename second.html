@@ -1,25 +1,13 @@
-<html lang="src"><head>
-  <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-86927400-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-    gtag("config", "UA-86927400-1");
-  </script>
+<html lang="src">
+  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Generacion K VII - Reto. Problema 2</title>
   <meta name="description" content="Page generated with Witux">
-  
-  
-</head>
-
+  </head>
 <body>
 <header>   <div class="title"> <div>Reto VII Generación K</div> <span>Are you ready?</span> </div> 
   <div class="wrapper" id="content">
-    
   <h1><span class="jeroglifico">𓀿</span> PROBLEMA 2 <span class="jeroglifico">𓀿</span></h1>
   <p>¡Bravo! ¡Estás a un paso de conseguirlo!</p>
   <h4>ENUNCIADO:</h4>
@@ -77,7 +65,7 @@
   function getArray(mensaje){
     return Array.from(mensaje);
   }
-  console.log('completo: ',Array.from(mensaje));
+  console.log('Array completo: ',Array.from(mensaje));
   function eliminaSaltos(msje){
     const newmsj = msje.filter((item) => {
       return !item.includes('\n');
@@ -88,7 +76,7 @@
     
   function cambianumeros(msje){
     let newmsj = msje.map(function (item,index){
-      if ((index % 2===0) || (index %3 ===0) || (index % 7 === 0) || (index % 11 ===0)|| (index %13 ===0)){
+      if ((index % 2===0) || (index %3 === 0) || (index % 7 === 0) || (index % 11 === 0)|| (index %13 === 0)){
           return item ='|';
       }else{
         return item;
@@ -110,8 +98,8 @@
   }
   function cambiachar(msje) {
     const newmsj = msje.map((item) => {
-      if ((item==='#' || (item === '!') || (item ===';'))) {
-        return '|';
+      if ((item==='#' || (item === '!') || (item ===';') || (item === 'y'))) {
+        return item ='|';
       } else {
         return item;
       }
@@ -130,14 +118,14 @@
     return array.join('');
   }
   function trunc(str) {
-  if (str.length <= 54) {
+  if (str.length < 54) {
     return str;
   } else {
-    return str.slice(0, 54);
+    return str.slice(0, 53);
   }
 }
-  let myvar= trunc(arrayToString(borrabarra(cambiachar(cambiamayusculas(cambianumeros(eliminaSaltos(getArray(mensaje))))))));
-  console.log(myvar);
+  mensaje = trunc(arrayToString(borrabarra(cambiachar(cambiamayusculas(cambianumeros(eliminaSaltos(getArray(mensaje))))))));
+  console.log(mensaje);
   </script>
   
   
